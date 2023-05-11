@@ -11,16 +11,19 @@
 #header > ul > li {
     list-style: none;
     display: inline-block;
+    color: lightgray;
 }
 
 #header > ul > li > a {
     text-decoration: none;
     padding: 10px;
     display: block;
+    color: lightgray;
 }
 
 #header > ul > li > a:visited {
     color: gray;
+    color: white;
 }
 
 #header > ul > li > a:hover {
