@@ -3,9 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        select {
+            width: 80px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
     <h1 th:text="${lastName}">lastName</h1>
-    <h1>[[${lastName}]]</h1>
+    <h1>[[${firstName}]]</h1>
+    <h1 th:text="|My Name is ${lastName}, ${firstName}|"></h1>
+
+    <span th:text="${'<i>Hojin, Chu</i>'}"></span><br/>
+    <span th:utext="${'<i>Hojin, Chu</i>'}"></span>
+
+    <table border="1px">
+        <tr th:each="item : ${list}">
+            <td th:text="${item}"></td>
+        </tr>
+
+        <tr th:if="${list.size}==0">
+            <td> 게시물이 없습니다. </td>
+        </tr>
+    </table>
+
+
+    <table border="1px">
+        <tr th:each="item : ${list}">
+            <td th:text="${item}"></td>
+        </tr>
+
+        <tr th:unless="${list.size}==0">
+            <td> 게시물이 없습니다. </td>
+        </tr>
+    </table>
+
+
+    <select name="" id="" multiple>
+        <option th:each="opt : ${list}" th:value="${opt}">[[${opt}]]</option>
+    </select>
+    <br>
+
+    <input th:each="chk : ${list}" type="checkbox" th:value="${chk}">[[${chk}]]<br>
+
+
+
+
+    <th:block th:each="chk : ${list}">
+        <input  type="checkbox" th:value="${chk}">[[${chk}]]<br>
+    </th:block>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
