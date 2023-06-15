@@ -53,6 +53,12 @@
     <th:block th:each="chk : ${list}">
         <input  type="checkbox" th:value="${chk}">[[${chk}]]<br>
     </th:block>
+
+
+
+    <a href="board.html" th:href="@{/board/list}"></a>
+
+    <a href="board.html" th:href="@{/board/list(bno=${bno}, type='L')}">himedia</a>
 </body>
 </html>
 

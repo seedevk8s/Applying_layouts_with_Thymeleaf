@@ -22,6 +22,8 @@ public class HomeController {   //원격 프로그램
         model.addAttribute("firstName", "Chu");
 
         model.addAttribute("list", Arrays.asList("aaa", "bbb", "ccc", "ddd", "eee"));
+
+        model.addAttribute("bno", 1128);
         return "test";          // templates/test.html
     }
 }
