@@ -58,7 +58,44 @@
 
     <a href="board.html" th:href="@{/board/list}"></a>
 
-    <a href="board.html" th:href="@{/board/list(bno=${bno}, type='L')}">himedia</a>
+    <a href="board.html" th:href="@{/board/list(bno=${bno}, type='L')}">himedia</a><br>
+
+
+
+
+<!--    <a href="board.html" th:href="@{/board/list(bno=${bno}, type='L')}">himedia</a>-->
+
+
+<!--   <th:block th:each="chk : ${list}">  -->
+        <input  type="checkbox" th:value="${chk}">[[${chk}]]<br>
+<!--    </th:block>-->
+
+
+<!--/*/   <th:block th:each="chk : ${list}">  /*/-->
+            <input  type="checkbox" th:value="${chk}">[[${chk}]]<br>
+<!--/*/   </th:block>  /*/-->
+
+    <table border="1px">
+        <tr th:each="item : ${list}">
+            <td th:text="${item}"></td>
+        </tr>
+
+        <!--/*-->
+        <tr>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+        </tr>
+        <!--*/-->
+        <tr th:unless="${list.size}==0">
+            <td> 게시물이 없습니다. </td>
+        </tr>
+    </table>
+
 </body>
 </html>
 
